@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+import path from "path";
+dotenv.config({ path: path.resolve("config/.env") });//to solve multer problem with paths
 import { v2 as cloudinary } from 'cloudinary';
 
 

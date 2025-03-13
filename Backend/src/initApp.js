@@ -5,6 +5,7 @@ import { deleteFromCloudinary } from "./utils/deleteFromCloudinary.js";
 import { deleteFromDataBase } from "./utils/deleteFromDataBase.js";
 
 import cors from 'cors'
+import { imageRouter } from "./modules/Image/image.routes.js";
 
 
 
@@ -15,6 +16,8 @@ export const initApp = (express, app) => {
 
     //connect to db
     connectionDB()
+
+    app.use("/image",imageRouter)
 
     app.get("/", (req, res) => {
         res.status(200).json({ message: "server is running" });
